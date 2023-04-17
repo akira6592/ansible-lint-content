@@ -1,0 +1,17 @@
+---
+- name: Test play
+  hosts: localhost
+  gather_facts: false
+
+  tasks:
+    - name: Debug
+      ansible.builtin.debug:
+        msg: aaaaaaaa
+
+    - name: Import role
+      ansible.builtin.import_role:
+        name: called_import_role
+
+    - name: Include role
+      ansible.builtin.include_role:
+        name: called_include_role
